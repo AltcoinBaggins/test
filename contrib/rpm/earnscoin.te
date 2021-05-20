@@ -1,0 +1,81 @@
+policy_module(earnscoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type earnscoin_t;
+type earnscoin_exec_t;
+init_daemon_domain(earnscoin_t, earnscoin_exec_t)
+
+permissive earnscoin_t;
+
+type earnscoin_initrc_exec_t;
+init_script_file(earnscoin_initrc_exec_t)
+
+type earnscoin_conf_t;
+files_type(earnscoin_conf_t)
+
+type earnscoin_var_lib_t;
+files_type(earnscoin_var_lib_t)
+
+type earnscoin_var_run_t;
+files_type(earnscoin_var_run_t)
+
+type earnscoin_port_t;
+corenet_port(earnscoin_port_t)
+
+########################################
+#
+# earnscoin local policy
+#
+allow earnscoin_t self:process { fork };
+
+allow earnscoin_t self:fifo_file rw_fifo_file_perms;
+allow earnscoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(earnscoin_t, earnscoin_conf_t, earnscoin_conf_t)
+manage_files_pattern(earnscoin_t, earnscoin_conf_t, earnscoin_conf_t)
+
+manage_dirs_pattern(earnscoin_t, earnscoin_var_lib_t, earnscoin_var_lib_t)
+manage_files_pattern(earnscoin_t, earnscoin_var_lib_t, earnscoin_var_lib_t)
+files_var_lib_filetrans(earnscoin_t, earnscoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(earnscoin_t, earnscoin_var_run_t, earnscoin_var_run_t)
+manage_files_pattern(earnscoin_t, earnscoin_var_run_t, earnscoin_var_run_t)
+
+sysnet_dns_name_resolve(earnscoin_t)
+corenet_all_recvfrom_unlabeled(earnscoin_t)
+
+allow earnscoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(earnscoin_t)
+corenet_tcp_sendrecv_generic_node(earnscoin_t)
+corenet_tcp_sendrecv_all_ports(earnscoin_t)
+corenet_tcp_bind_generic_node(earnscoin_t)
+
+gen_require(`
+    type earnscoin_port_t;
+')
+allow earnscoin_t earnscoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type earnscoin_port_t;
+')
+allow earnscoin_t earnscoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(earnscoin_t)
+
+files_read_etc_files(earnscoin_t)
+
+miscfiles_read_localization(earnscoin_t)
+
+sysnet_dns_name_resolve(earnscoin_t)
+
+allow earnscoin_t earnscoin_exec_t:file execute_no_trans;
+allow earnscoin_t self:process setsched;
+corecmd_exec_ls(earnscoin_t)
+corenet_tcp_connect_http_port(earnscoin_t)
+dev_read_urand(earnscoin_t)
+fs_getattr_xattr_fs(earnscoin_t)
+kernel_read_system_state(earnscoin_t)

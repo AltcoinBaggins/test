@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=earnscoin
+Comment=earnscoin P2P Cryptocurrency
+Exec=earnscoin-qt %u
+Terminal=false
+Type=Application
+Icon=earnscoin128
+MimeType=x-scheme-handler/earnscoin;
+Categories=Office;Finance;
+StartupWMClass=earnscoin-qt
+Name[en_IN]=earnscoin-qt.desktop

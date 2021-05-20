@@ -1,0 +1,3 @@
+usr/local/bin/earnscoind usr/bin
+usr/local/bin/earnscoin-cli usr/bin
+debian/examples/earnscoin.conf etc/earnscoin

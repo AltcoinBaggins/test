@@ -1,0 +1,8 @@
+/usr/bin/earnscoin-cli		--	gen_context(system_u:object_r:earnscoin_exec_t,s0)
+/usr/sbin/earnscoind		--	gen_context(system_u:object_r:earnscoin_exec_t,s0)
+/usr/lib(64)?/earnscoin/earnscoind		--	gen_context(system_u:object_r:earnscoin_exec_t,s0)
+
+/etc/earnscoin(/.*)?		gen_context(system_u:object_r:earnscoin_conf_t,s0)
+/var/lib/earnscoin(/.*)?		gen_context(system_u:object_r:earnscoin_var_lib_t,s0)
+
+(/var)?/run/earnscoind(/.*)?   gen_context(system_u:object_r:earnscoin_var_run_t,s0)

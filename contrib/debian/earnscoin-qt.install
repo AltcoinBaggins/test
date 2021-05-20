@@ -1,0 +1,6 @@
+usr/local/bin/earnscoin-qt usr/bin
+share/pixmaps/earnscoin32.xpm usr/share/pixmaps
+share/pixmaps/earnscoin16.xpm usr/share/pixmaps
+share/pixmaps/earnscoin128.png usr/share/pixmaps
+debian/earnscoin-qt.desktop usr/share/applications
+debian/earnscoin-qt.protocol usr/share/kde4/services/

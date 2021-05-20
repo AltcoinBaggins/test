@@ -1,0 +1,14 @@
+QT_TS = \
+  qt/locale/earnscoin_de.ts \
+  qt/locale/earnscoin_en.ts \
+  qt/locale/earnscoin_en_US.ts \
+  qt/locale/earnscoin_es.ts \
+  qt/locale/earnscoin_fr_FR.ts \
+  qt/locale/earnscoin_hr_HR.ts \
+  qt/locale/earnscoin_it.ts \
+  qt/locale/earnscoin_ko_KR.ts \
+  qt/locale/earnscoin_nl.ts \
+  qt/locale/earnscoin_pl.ts \
+  qt/locale/earnscoin_ru.ts \
+  qt/locale/earnscoin_tr.ts \
+  qt/locale/earnscoin_zh_CN.ts
