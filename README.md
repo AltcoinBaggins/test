@@ -1,13 +1,6 @@
 <h1>Earnscoin repository</h1>
 <p> Earnscoin is a digital crypto currency based on blockchain technology to support Earnscoin-VPS platform, powered by own Earnscoin blockchain.<p>
 <p> Earnscoin utilizes a Proof of Stake (PoS) consensus system algorithm, allowing all owners of Earnscoin to participate in earning block rewards while securing the network with full node wallets, as well as to run Masternodes to have passive income of Earnscoin.<p>
-
-<br> More information at: <br>
- - Website [Earnscoin-VPS](https://Earnscoinavps.com)
- - Block Explorer [EXPLORER](http://104.155.183.25:3001/)
- - Join community in [DISCORD](https://discord.gg/RpBXAnvp7k)
- - Github [GITHUB](https://github.com/Earnscoinavps-project/Earnscoina)
-  
   
 <h2><strong>Specification:</strong></h2>
 <table>
