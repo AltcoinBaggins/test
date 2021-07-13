@@ -1616,27 +1616,27 @@ CAmount GetBlockValue(int nHeight)
     } else if (nHeight <= 100000) { 
         nSubsidy = 0.85 * COIN;
     } else if (nHeight <= 120000) { 
-        nSubsidy = 0.90 * COIN;
+        nSubsidy = 12.00 * COIN;
     } else if (nHeight <= 140000) { 
-        nSubsidy = 0.95 * COIN;
+        nSubsidy = 11.25 * COIN;
     } else if (nHeight <= 160000) { 
-        nSubsidy = 1.00 * COIN;
-    } else if (nHeight <= 180000) { 
-        nSubsidy = 1.90 * COIN;
-    } else if (nHeight <= 200000) { 
-        nSubsidy = 1.70 * COIN;
-    } else if (nHeight <= 220000) { 
-        nSubsidy = 1.50 * COIN;
-    } else if (nHeight <= 240000) { 
-        nSubsidy = 1.30 * COIN;
-    } else if (nHeight <= 260000) { 
-        nSubsidy = 9.50 * COIN;
-    } else if (nHeight <= 280000) { 
-        nSubsidy = 10.00 * COIN;
-    } else if (nHeight <= 300000) { 
         nSubsidy = 10.50 * COIN;
+    } else if (nHeight <= 180000) { 
+        nSubsidy = 28.50 * COIN;
+    } else if (nHeight <= 200000) { 
+        nSubsidy = 26.50 * COIN;
+    } else if (nHeight <= 220000) { 
+        nSubsidy = 24.50 * COIN;
+    } else if (nHeight <= 240000) { 
+        nSubsidy = 20.50 * COIN;
+    } else if (nHeight <= 260000) { 
+        nSubsidy = 145.00 * COIN;
+    } else if (nHeight <= 280000) { 
+        nSubsidy = 125.00 * COIN;
+    } else if (nHeight <= 300000) { 
+        nSubsidy = 115.00 * COIN;
     } else {
-        nSubsidy = 15.00 * COIN;
+        nSubsidy = 100.00 * COIN;
     }
 
     return nSubsidy;
@@ -1663,27 +1663,27 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     } else if (nHeight <= 100000) { 
         nMnPayment = 0.73 * COIN;
     } else if (nHeight <= 120000) { 
-        nMnPayment = 0.88 * COIN;
+        nMnPayment = 8.95 * COIN;
     } else if (nHeight <= 140000) { 
-        nMnPayment = 0.93 * COIN;
+        nMnPayment = 8.20 * COIN;
     } else if (nHeight <= 160000) { 
-        nMnPayment = 0.98 * COIN;
+        nMnPayment = 7.45 * COIN;
     } else if (nHeight <= 180000) { 
-        nMnPayment = 1.88 * COIN;
+        nMnPayment = 25.45 * COIN;
     } else if (nHeight <= 200000) { 
-        nMnPayment = 1.68 * COIN;
+        nMnPayment = 23.45 * COIN;
     } else if (nHeight <= 220000) { 
-        nMnPayment = 1.48 * COIN;
+        nMnPayment = 21.45 * COIN;
     } else if (nHeight <= 240000) { 
-        nMnPayment = 1.28 * COIN;
+        nMnPayment = 17.45 * COIN;
     } else if (nHeight <= 260000) { 
-        nMnPayment = 9.48 * COIN;
+        nMnPayment = 134.85 * COIN;
     } else if (nHeight <= 280000) { 
-        nMnPayment = 9.98 * COIN;
+        nMnPayment = 114.85 * COIN;
     } else if (nHeight <= 300000) { 
-        nMnPayment = 10.48 * COIN;
+        nMnPayment = 104.85 * COIN;
     } else {
-        nMnPayment = 14.98 * COIN;
+        nMnPayment = 89.85 * COIN;
     }
 
     // sanity check, should never happen
@@ -1699,8 +1699,12 @@ CAmount GetDevPayment(int nHeight, CAmount blockValue)
 
     if (nHeight <= 1000) { 
         nDevPayment = 0;
-    } else { 
+    } else if (nHeight <= 100000) { 
         nDevPayment = 0.018000001 * COIN;
+    } else if (nHeight <= 240000) { 
+        nDevPayment = 3.000000001 * COIN;
+    } else { 
+        nDevPayment = 10.000000001 * COIN;
     }
 
     // sanity check, should never happen
